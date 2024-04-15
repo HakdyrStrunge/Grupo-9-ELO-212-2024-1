@@ -1,0 +1,118 @@
+module testbench_numfib;
+    logic a_test,b_test,c_test,d_test;
+    
+    logic  out_test;
+    Fib_Rec DUT(
+        .a(a_test),
+        .b(b_test),
+        .c(c_test),
+        .d(d_test),
+        .out(out_test)
+    );
+    initial begin
+        a_test = 1'b0;
+        b_test = 1'b0;
+        c_test = 1'b0;
+        d_test = 1'b0;
+        
+        #5;
+        
+        a_test = 1'b0;
+        b_test = 1'b0;
+        c_test = 1'b0;
+        d_test = 1'b1;
+        
+        #5;
+        
+        a_test = 1'b0;
+        b_test = 1'b0;
+        c_test = 1'b1;
+        d_test = 1'b0;
+        
+        #5;
+        
+        a_test = 1'b0;
+        b_test = 1'b0;
+        c_test = 1'b1;
+        d_test = 1'b1;
+        
+        #5;
+        a_test = 1'b0;
+        b_test = 1'b1;
+        c_test = 1'b0;
+        d_test = 1'b0;
+        
+        #5;
+        a_test = 1'b0;
+        b_test = 1'b1;
+        c_test = 1'b0;
+        d_test = 1'b1;
+        
+        #5;
+        a_test = 1'b0;
+        b_test = 1'b1;
+        c_test = 1'b1;
+        d_test = 1'b0;
+        
+        #5;
+        a_test = 1'b0;
+        b_test = 1'b1;
+        c_test = 1'b1;
+        d_test = 1'b1;
+        
+        #5;
+        a_test = 1'b1;
+        b_test = 1'b0;
+        c_test = 1'b0;
+        d_test = 1'b0;
+        
+        #5;
+        a_test = 1'b1;
+        b_test = 1'b0;
+        c_test = 1'b0;
+        d_test = 1'b1;
+        
+        #5;
+        a_test = 1'b1;
+        b_test = 1'b0;
+        c_test = 1'b1;
+        d_test = 1'b0;
+        
+        #5;
+        
+        a_test = 1'b1;
+        b_test = 1'b0;
+        c_test = 1'b1;
+        d_test = 1'b1;
+        
+        #5;
+        
+        a_test = 1'b1;
+        b_test = 1'b1;
+        c_test = 1'b0;
+        d_test = 1'b0;
+        
+        #5;
+        a_test = 1'b1;
+        b_test = 1'b1;
+        c_test = 1'b0;
+        d_test = 1'b1;
+        
+        #5;
+        
+        a_test = 1'b1;
+        b_test = 1'b1;
+        c_test = 1'b1;
+        d_test = 1'b0;
+        
+        #5;
+        a_test = 1'b1;
+        b_test = 1'b1;
+        c_test = 1'b1;
+        d_test = 1'b1;
+        
+        #5;
+        $finish;
+    end
+   
+endmodule
