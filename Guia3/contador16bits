@@ -1,9 +1,0 @@
-module contador16bits(
-    input logic clk,  // Entrada de reloj
-    output logic [15:0] count  // Salida del contador de 16 bits
-);
-
-    always_ff @(posedge clk)
-        count <= count + 1;
-
-endmodule
