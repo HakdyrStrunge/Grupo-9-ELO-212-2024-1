@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
-
 module counter_2bits(
-    input logic clk,     // Entrada de reloj
+    input logic clk,reset,     // Entrada de reloj
     output logic [1:0] count  // Salida del contador de 2 bits
 );
 
@@ -10,7 +9,10 @@ module counter_2bits(
 
     // Incremento del contador en cada flanco de subida del reloj
     always_ff @(posedge clk) begin
-        counter_reg <= counter_reg + 1;
+        if(reset)
+            counter_reg <= 'd0;
+        else
+            counter_reg <= counter_reg + 1;
     end
 
     // Salida del contador
