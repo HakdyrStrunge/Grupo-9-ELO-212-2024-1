@@ -10,4 +10,5 @@
 | 2024-04-20| 21:00   | 00:00        | Union de ideas y desarrollo del codigo              | 
 | 2024-04-21| 00:00   | 01:00        | Repaso del resultado final                          |
 
-## Conclusiones
+## Comentarios
+Los modulos como bcd_to_7, mux, counter_3bits y decodificador_binario fueron reutilizados de sesiones anteriores, realizando sus respectivas adaptaciones para lo requerido en la actividad, en la union de ideas se estuvo discutiendo bastante tiempo porque habian diferentes formas de llegar a la requerido, por lo que despues de esa convergencia, se desarrollo el diseño mas completo.
