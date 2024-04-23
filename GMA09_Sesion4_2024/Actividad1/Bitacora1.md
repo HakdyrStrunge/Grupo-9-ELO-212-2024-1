@@ -18,6 +18,5 @@
 | 2024-04-18| 17:30   | 18:00        | Ejecucion y pruebas                                 |
 | 2024-04-18| 18:00   | 19:30        | Revision de errores y salidas en la simulacion      |
 | 2024-04-18| 19:30   | 20:00        | Ejecucion de simulacion con diferentes valores      |
-Repaso del resultado final  
 ## Comentarios
 Los modulos como bcd_to_7, mux, counter_3bits y decodificador_binario fueron reutilizados de sesiones anteriores, realizando sus respectivas adaptaciones para lo requerido en la actividad, en la union de ideas se estuvo discutiendo bastante tiempo porque habian diferentes formas de llegar a la requerido, por lo que despues de esa convergencia, se desarrollo el diseño mas completo. Tambien se le dedicó una cantidad considerable de tiempo a la creacion y ejecucion de la simulacion, puesto que fue necesario iterar varias veces para solucionar todos los errores iniciales, ademas de tener que probar la simulacion con diferentes casos y/o valores de los parametros.
