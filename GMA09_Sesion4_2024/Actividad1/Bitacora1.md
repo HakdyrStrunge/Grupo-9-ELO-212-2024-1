@@ -1,6 +1,6 @@
-# Bitácora de Proyecto
+# Bitácora de Actividad 1
 
-## Desarrollo del Proyecto
+## Desarrollo de la actividad 1
 ### Horas totales de trabajo: 6 horas
 
 | Día       | Inicio  | Hora Término | Actividades                                         |
