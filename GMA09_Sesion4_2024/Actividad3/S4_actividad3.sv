@@ -2,17 +2,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 // University: Universidad Tecnica Federico Santa Maria
 // Course: ELO212
-// Students: 
+// Students: Aguilera, Fernandez, Vega
 // 
 // Create Date: 
 // Design Name: Guia 4
 // Module Name: S4_actividad3
-// Project Name: 
+// Project Name:  Actividad 3
 // Target Devices: xc7a100tcsg324-1
 // Tool Versions: Vivado 2021.1
-// Description: 
+// Description: Se codifica el accionar de una ALU, donde mediante 2 entradas (A y B)
+// realizaremos distintas operaciones aritmeticas (Suma, Resta, Or y And)
 // 
-// Dependencies: 
+// Dependencies: None
 // 
 // Revision:
 // Revision 0.01 - File Created
@@ -25,44 +26,41 @@ module S4_actividad3 #(parameter M = 8)(
     input  logic [M-1:0]    A, B,
     input  logic [1:0]      OpCode,       
     output logic [M-1:0]    Result,
-    output logic [4:0]      Flags, // N Z C V P 
+    output logic [4:0]      Flags // N Z C V P 
                                     //4 3 2 1 0
-    output logic signed [M-1:0] A_signed, B_signed,result_signed
-    );
+   );
  
     always_comb begin
-        logic [M:0] res;
+        logic [M:0] res,B_comp2;
         int contador ;
-        //logic signed [M-1:0] A_signed, B_signed;
-        
-        A_signed = (A[M-1]) ? (~A + 1) : A; // Si el bit más significativo de A es 1, toma el complemento a dos; de lo contrario, simplemente asigna A
-        // Verificar que pasa si A se sale de los cvalores posibles en complemento2 
-        B_signed = (B[M-1]) ? (~B + 1) : B; // Si el bit más significativo de A es 1, toma el complemento a dos; de lo contrario, simplemente asigna A
-        if(OpCode == 2'b00)
+        foreach(Flags[i])
+             Flags[i] = 'x; //Para evitar latches
+
+        B_comp2 = (~B + 1); //calculamos el complemento a2 de B
+        if(OpCode == 2'b00) begin
         //Resta
-            result_signed = A_signed - B_signed;
-            res = A-B; // Verifica si existe carry out en suma
+            Result = A + B_comp2;
+            //Bloque condicional que se encarga de obtener la FLAG C
+            //Si A es mayor que B no se genera C
             if (A >= B) begin
-                Result = A - B; // Resultado sin signo
                 Flags[2] = 0;
             end else begin
-                Result = B - A; // Resultado sin signo
                 Flags[2] = 1;
             end
             //Considera resultado de complemento 2
-            //Verifica si hay overflow
+            //Verifica si hay overflow en suma
             //Flag V
             
-            if (A_signed[M-1] && !B_signed[M-1] && !result_signed[M-1])
+            if (A[M-1] && !B[M-1] && !Result[M-1])
                 Flags[1] = 1;
-            else if(!A_signed[M-1] && B_signed[M-1] && result_signed[M-1])
+            else if(!A[M-1] && B[M-1] && Result[M-1])
                 Flags[1] = 1;
             else
                 Flags[1] = 0;
-
-        if(OpCode == 2'b01)
+        end;
+        if(OpCode == 2'b01) begin
         
-            result_signed = A_signed + B_signed;
+
             res = A+B; // Verifica si existe carry out en suma
             Result = A+B; //Resultado sin signo
             
@@ -70,9 +68,9 @@ module S4_actividad3 #(parameter M = 8)(
             //Verifica si hay overflow
             //Flag V
             //Solo en caso de la suma
-            if (!A_signed[M-1] && !B_signed[M-1] && result_signed[M-1])
+            if (!A[M-1] && !B[M-1] && Result[M-1])
                 Flags[1] = 1;
-            else if(A_signed[M-1] && B_signed[M-1] && !result_signed[M-1])
+            else if(A[M-1] && B[M-1] && !Result[M-1])
                 Flags[1] = 1;
             else
                 Flags[1] = 0;
@@ -85,51 +83,38 @@ module S4_actividad3 #(parameter M = 8)(
             else
                 Flags[2]=0;
             //Alternativamente funciona verificar bits mas significativos de A y B si ambos tienen valor alto, tiene carry out
-                
+        end;     
         if(OpCode == 2'b10) begin
-            result_signed = A_signed | B_signed;
-            res = A|B; // Verifica si existe carry out en suma
             Result = A|B; //Resultado sin signo
             Flags[1] = 0;
             Flags[2]=0;
         end;
          if (OpCode == 2'b11) begin
-            result_signed = A_signed & B_signed;
-            res = A & B; // Verifica si existe carry out en suma
             Result = A & B; // Resultado sin signo
             Flags[1] = 0;
             Flags[2] = 0;
         end;
         //Verifica si el numero es negativo
         //Flag N
-        if (result_signed[M-1])
+        if (Result[M-1])
             Flags[4] = 1;
         else
             Flags[4] = 0;
             
-
-
-
         //Verifica si resultado es 0
         //Flag Z
         //Considera el resultado sin signo (numero binario)
-        if (Result == 'd0) // Utiliza '==' para comparar, no '='
-            Flags[3] = 1; // Utiliza '=' para la asignación, no '<='
+        if (Result == 'd0) 
+            Flags[3] = 1;
         else
             Flags[3] = 0; 
             
         // Verificar si el número de unos es impar
         //Considera el resultado de sin signo (numero binario)
         //Flag P
-        contador=0;
-        for (int i = 0; i < M; i++) begin
-            if (Result[i] == 1)
-                contador++;
-            end
-
-        if (contador % 2 != 0)
+        if (^(Result))
             Flags[0] = 1; 
-        else
+        else 
             Flags[0] = 0;
     end
     
