@@ -31,12 +31,12 @@ module S6_actividad3(
     );
     //assign LED = SW;
     logic Clk_hex;
-    logic [7:0]result;
+    logic [6:0]result;
     logic [4:0]flags;
     
-    logic mux_out;
-    logic [2:0] count_out;
-    clockdivider #(100e6,5000) clk_dividido (
+    logic [3:0] mux_out;
+    logic count_out;
+    clockdivider #(100e6,500) clk_dividido (
         .clk_in(CLK100MHZ),
         .reset(BTNU),
         //.fclkin_dado(fclkin_dadoo),
@@ -80,3 +80,4 @@ module S6_actividad3(
     );
     assign LED[4:0]=flags[4:0];
 endmodule
+
