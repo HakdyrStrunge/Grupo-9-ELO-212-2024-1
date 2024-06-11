@@ -1,5 +1,5 @@
 ## Desarrollo de la actividad
-### Horas totales de trabajo: 22 horas
+### Horas totales de trabajo: 6.5 horas
 | Día       | Inicio  | Hora Término | Actividades                                                      |
 |-----------|---------|--------------|------------------------------------------------------------------|
 | 2024-06-08| 14:00   | 16:00        | Lectura del enunciado y entendimiento de UNDO                    |
