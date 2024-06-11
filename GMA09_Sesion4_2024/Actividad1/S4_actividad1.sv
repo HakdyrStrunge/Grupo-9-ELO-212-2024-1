@@ -24,7 +24,7 @@
 module S4_actividad1(
     input  logic        clock,
     input  logic        reset,
-    input  logic [31:0] HEX_in,
+    input  logic [16:0] HEX_in,
     output logic [6:0]  segments,
     output logic [7:0]  anodes
 );
