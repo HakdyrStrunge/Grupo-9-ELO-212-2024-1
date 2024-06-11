@@ -1,4 +1,4 @@
-## Desarrollo de la actividad
+## Desarrollo de la actividad 1
 ### Horas totales de trabajo: 22 horas
 | Día       | Inicio  | Hora Término | Actividades                                                      |
 |-----------|---------|--------------|------------------------------------------------------------------|
@@ -8,8 +8,7 @@
 | 2024-06-06| 19:00   | 22:00        | Codificación de los 6 estados posibles                       |
 | 2024-06-06| 22:00   | 01:00        | Integración con la ALU ya existente |
 | 2024-06-07| 01:00   | 02:00        | Chequeo del esquemático entregado por el programa       |
-| 2024-06-07| 17:00   | 19:00        | Conexión de señales físicas en un constraint y configuración de las entradas y salidas                     |
 | 2024-06-07| 19:00   | 20:00        | Pruebas con la simulación de Vivado    
 | 2024-06-07| 20:00   | 22:00        | Documentación del diseño y ajustes finales 
 ## Comentarios
-en proceso                
+La mayor complicación estuvo en las pruebas de la simulación, puesto que ahí se pudo observar comportamientos incorrectos, los cuales se pudieron solucionar modificando la máquina de estado.  
