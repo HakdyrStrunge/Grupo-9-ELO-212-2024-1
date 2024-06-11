@@ -1,6 +1,7 @@
 Desarrollo de la actividad
 Horas totales de trabajo: 8 horas
 | Día	| Inicio| Hora | Término	| Actividades
+|-----------|---------|--------------|------------------------------------------------------------------|
 | 2024-06-01	| 09:00	| 10:30	| Revisión del enunciado y análisis de requisitos
 | 2024-06-01	| 11:00	| 12:00	| Diseño de la máquina de estados para la ALU
 | 2024-06-01	| 13:00	| 14:00	| Implementación del módulo S9actividad1
