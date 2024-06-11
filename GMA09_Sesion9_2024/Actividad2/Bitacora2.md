@@ -1,4 +1,4 @@
-## Desarrollo de la actividad
+## Desarrollo de la actividad 2
 ### Horas totales de trabajo: 6.5 horas
 | Día       | Inicio  | Hora Término | Actividades                                                      |
 |-----------|---------|--------------|------------------------------------------------------------------|
