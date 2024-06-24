@@ -1,4 +1,4 @@
-module S10_actividad11#(parameter N_DEBOUNCER = 10) (
+module S10_actividad1#(parameter N_DEBOUNCER = 10) (
     input logic clk, 
                 resetN, 
                 Enter, 
